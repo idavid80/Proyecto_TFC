@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-$67u9viu+evu(v1zc#4e63+!t35izuiu&hwfksurm2t&-ox8vp"
+SECRET_KEY = "django-insecure-1234"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -88,7 +88,7 @@ DATABASES = {
     }
 }
 
-MONGO_DB="mongodb+srv://idavid80:R8oH4sD6kDTNQWAT@cluster0.p3kifpt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_DB="mongodb://localhost:27017"
 
 """
 DATABASES = {
@@ -97,7 +97,7 @@ DATABASES = {
             'NAME': 'wine_api',
             'ENFORCE_SCHEMA': False,
             'CLIENT': {
-                'host': 'mongodb+srv://idavid80:R8oH4sD6kDTNQWAT@cluster0.p3kifpt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+                'host': 'mongodb://localhost:27017'
             }  
         }
 }
@@ -150,4 +150,4 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8081',
 )
 
-ALLOWED_HOSTS = ['192.168.1.37', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
