@@ -28,7 +28,7 @@ Por último, para que la garantizar el buen uso de los datos sensibles de la apl
 
 - [Bibliografia](#bibliografia)
 
-(id="frontend")
+<a id="frontend"></a>
 
 ## Frontend
 
@@ -175,7 +175,7 @@ app_vino/
 
 - **assets**: carpeta que almacena los recursos de la app, en este caso sólo imagen del logo y avatar.
 
-(id="backend")
+<a id="backend"></a>
 
 ## Backend
 
