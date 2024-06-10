@@ -14,21 +14,81 @@ Por último, para que la garantizar el buen uso de los datos sensibles de la apl
 
 ## Índice
 
+- [Marco teórico / Estado del arte](#estado-del-artemarco-teórico)
+
+- [Requisitos](#requisitos)
+
 - [Frontend: Flutter](#frontend)
 
 - [Extracción de datos: webscrapping](#backend)
 
-- [Django: Rest Framework](#django)
+- [Django: Rest Framework](#api-django)
 
-- [Autentificación: Ory](#ory)
+- [Autentificación: Ory](#sistema-de-autentificación-ory)
 
-- [Base Datos: MongoDB](#mongo)
+- [Base Datos: MongoDB](#base-de-datos)
 
-- [Recomendaciones: numby + panda](#recomendaciones)
+- [Sistema Recomendaciones](#sistema-de-recomendaciones)
+
+- [Futuras mejoras](#futuras-mejoras)
 
 - [Bibliografia](#bibliografia)
 
-<a id="frontend"></a>
+## Estado del arte/Marco Teórico
+
+### 1. Tendencias Actuales en Aplicaciones de Degustación de Vinos
+
+- **Experiencia del Usuario (UX) Mejorada**: Las aplicaciones móviles de degustación de vinos están evolucionando para ofrecer una experiencia de usuario más personalizada y atractiva, utilizando interfaces intuitivas y diseño centrado en el usuario.
+
+- **Integración de Redes Sociales**: Las aplicaciones modernas de degustación de vinos tienden a integrar funciones de redes sociales, permitiendo a los usuarios compartir sus valoraciones y experiencias con amigos y seguidores en plataformas como Instagram, Facebook y Twitter.
+
+- **Recomendaciones Personalizadas**: La tendencia actual es utilizar algoritmos de aprendizaje automático y análisis de datos para generar recomendaciones de vinos personalizadas, basadas en las preferencias y valoraciones de los usuarios.
+
+- **Acceso a Información Detallada**: Los consumidores de vino buscan aplicaciones que les proporcionen información detallada sobre cada vino, incluyendo notas de cata, maridajes recomendados, información sobre la bodega y la región de origen.
+
+### 2.Posibles Soluciones a los Problemas Planteados
+
+- **Interfaz de Usuario Intuitiva**: Para mejorar la experiencia del usuario, la aplicación debe diseñarse con una interfaz intuitiva que sea fácil de navegar y que proporcione acceso rápido a las funciones principales, como la exploración de vinos, la valoración y los comentarios.
+
+- **Integración de Redes Sociales**: Para aumentar la participación de los usuarios y promover la difusión orgánica, la aplicación debe permitir a los usuarios compartir sus experiencias y valoraciones de vinos en redes sociales con facilidad, integrando funciones de intercambio social directamente en la aplicación.
+
+- **Sistema recomendación Inteligente**: La aplicación puede implementar un sistema de recomendación basado en algoritmos de aprendizaje automático que analicen las valoraciones y preferencias de los usuarios para sugerir vinos nuevos y relevantes que se ajusten a sus gustos individuales.
+
+- **Acceso a Información Detallada**: La aplicación debe ofrecer información detallada sobre cada vino, incluyendo notas de cata, información de la bodega, puntuaciones de expertos y maridajes recomendados. Esto puede lograrse integrando una base de datos amplia y actualizada sobre vinos y bodegas, y presentando esta información de manera clara y concisa en la interfaz de usuario.
+
+## Requisitos
+
+### Requisitos Funcionales
+
+1. **Registro de Usuarios**: La aplicación debe permitir a los usuarios crear una cuenta utilizando un nombre de usuario y contraseña, o autenticarse a través de redes sociales.
+
+2. **Exploración de Vinos**: Los usuarios deben poder explorar una lista de vinos disponibles, con información detallada sobre cada uno, como nombre, variedad, región de origen, añada, etc.
+
+3. **Valoración de Vinos**: Los usuarios pueden calificar los vinos en una escala predeterminada (por ejemplo, de 1 a 5 estrellas) y proporcionar comentarios sobre su experiencia de degustación.
+
+4. **Comentarios y Reseñas**: Los usuarios pueden escribir comentarios detallados sobre sus experiencias con un vino específico y leer los comentarios de otros usuarios.
+Perfil de Usuario: Cada usuario debe tener un perfil personalizado donde puedan ver sus actividades pasadas, como vinos valorados, comentarios realizados y lista de deseos.
+
+5. **Lista de Deseos**: Los usuarios pueden agregar vinos a una lista de deseos para referencia futura o para compra.
+
+6. **Sistema recomendación**: La aplicación debe ofrecer recomendaciones personalizadas de vinos basadas en las valoraciones y preferencias de los usuarios.
+Búsqueda Avanzada: Se debe proporcionar una función de búsqueda avanzada que permita a los usuarios filtrar los vinos según diferentes criterios, como variedad de uva, región, precio, etc.
+
+### Requisitos No Funcionales
+
+1. **Usabilidad**: La interfaz de usuario debe ser intuitiva y fácil de usar, con un diseño limpio y atractivo.
+
+2. **Rendimiento**: La aplicación debe ser rápida y receptiva, con tiempos de carga mínimos incluso en conexiones de red lentas.
+
+3. **Seguridad**: Se deben implementar medidas de seguridad adecuadas, como cifrado de datos y autenticación segura, para proteger la información del usuario.
+
+4. **Escalabilidad**: La arquitectura de la aplicación y la base de datos deben ser escalables para manejar un crecimiento futuro en el número de usuarios y vinos.
+
+5. **Compatibilidad**: La aplicación debe ser compatible con una variedad de dispositivos móviles y sistemas operativos, incluidos iOS y Android.
+
+6. **Disponibilidad**: La aplicación debe estar disponible para su uso en línea y fuera de línea en la medida de lo posible, con capacidad de sincronización de datos cuando se recupera la conexión.
+
+7. **Mantenimiento**: Se deben seguir buenas prácticas de desarrollo de software para facilitar el mantenimiento futuro de la aplicación, incluida la modularidad del código y la documentación adecuada.
 
 ## Frontend
 
@@ -175,7 +235,7 @@ app_vino/
 
 - **assets**: carpeta que almacena los recursos de la app, en este caso sólo imagen del logo y avatar.
 
-<a id="backend"></a>
+(id="backend")
 
 ## Backend
 
@@ -218,8 +278,6 @@ app_vino/
 - **pandas** es una biblioteca poderosa para la manipulación y análisis de datos. Proporciona estructuras de datos de alto rendimiento y fáciles de usar, como DataFrames y Series, que son fundamentales para trabajar con datos tabulares.
 
 - **seaborn** es una biblioteca para la visualización de datos basada en matplotlib. Proporciona una interfaz de alto nivel para dibujar atractivos y informativos gráficos estadísticos. Es especialmente útil para la visualización de relaciones entre variables.
-
-<a id="django"></a>
 
 ## Api Django
 
@@ -468,7 +526,6 @@ Para implementar el docker en la parte backend así como del uso del SDK en la a
 - [Google Sign](https://www.ory.sh/docs/kratos/social-signin/google#flutter-code-example)
 
 > [!NOTE]
-
 > Para realizar el trabajo se ha utilizado prácticamente toda la documentación de ory, **ory keto** está configurado en el proyecto, aunque no está implementado en esta versión
 
 La implementación de ory se ha realizado a través de un contenedor Dockers, el cual se ha configurado para disponer del uso de Ory Kratos, Oauth y Keto. Ory kratos y Oauth nos va a permitir la autentificación del usuario, así como de la gestión de los tokens, cookies, gestión de usuarios contraseñas.
@@ -480,8 +537,6 @@ Para el frontend de la aplicación, se ha optado por implementar el SDK disponib
 ### Mejoras
 
 Como mejoras en esta capa de la aplicación estaría la de implementar el sistema de permisos de Keto, el cual está configurado y utilizar Kubernets para que establezca su sistema de orquestación entre las máquinas virtuales.
-
-<a id="mongo"> </a>
 
 ## Base de datos
 
@@ -547,11 +602,71 @@ Esta colección también se utilizará para el sistema de recomendaciones. Estos
 
 - **usuario_id**: id del usuario que ha realizado la valoración, para poder establecer los criterios de recomendaciones.
 
-<a id="recomendaciones"></a>
+## Sistema de recomendaciones
 
-## Sistema recomendaciones
+## Futuras mejoras
 
-<a id="bibliografia"></a>
+Las pruebas realizadas con la app muestran que aún no está a punto para el despliegue. sería conveniente mejorar los endpoints, establecer el sistema de recomendaciones, así como establecer un menú de configuración con más opciones. La gama de colores sería conveniente mejorarla.
+
+La api, sería conveniente realizar unas prueba de la api, antes de su puesta en marcha, en plataformas como ngrok para verificar su seguridad y rendimiento. Aumentar el número d endpoints para el sistema de recomendaciones.
+
+El sistema de autentificación estaría pendiente de implementar ory keto, que es un sistema de permisos de usuarios. Con el se pretende ofrecer permisos para poder compartir información entre ellos de forma segura y confiable.
+
+Respecto a la parte de extracción de datos, sería conveniente obtener más datos técnicos ara mejorar el sistema  de recomendaciones. También sería conveniente añadir más información de interés para el usuario, como descripción, maridaje o puntaciones recibida por sectores especializados (Parker, Peñin, Suckling, Robinson, etc).
+
+## Conclusiones
+
+### Funcionalidades y Usabilidad
+
+#### Amplio Catálogo de Vinos
+
+La aplicación ofrece una vasta selección de más de 3000 vinos con características y descripciones detalladas, facilitando a los usuarios la búsqueda y elección de vinos.
+Sistema de Valoraciones y Comentarios:
+
+Permite a los usuarios valorar los vinos que han probado y dejar comentarios, lo que no solo enriquece la experiencia de usuario sino que también crea una comunidad de feedback útil para otros usuarios.
+Historial Personalizado:
+
+Los usuarios pueden consultar una lista de los vinos que han valorado anteriormente, lo cual les ayuda a recordar sus experiencias pasadas y tomar decisiones informadas en el futuro.
+Lista de Deseos:
+
+La opción de agregar vinos a una lista de deseos permite a los usuarios mantener un registro de los vinos que les gustaría probar o comprar, mejorando la planificación de sus compras futuras.
+Integración con Tiendas Online:
+
+Un enlace directo a tiendas online para comprar vino facilita la adquisición de los vinos deseados sin salir de la aplicación, proporcionando una experiencia de compra más fluida.
+
+### Personalización y Recomendaciones
+
+#### Sistema de Recomendaciones Personalizadas
+
+La aplicación utiliza un algoritmo que analiza las valoraciones de los usuarios para recomendar vinos similares, presentando tres listas basadas en parámetros establecidos. Esto mejora la personalización y ayuda a los usuarios a descubrir nuevos vinos que se ajusten a sus preferencias.
+Beneficios para el Usuario:
+
+#### Decisión de Compra Informada
+
+Al proporcionar descripciones detalladas, valoraciones y comentarios, la aplicación ayuda a los usuarios a tomar decisiones de compra más informadas.
+Experiencia de Usuario Mejorada:
+
+La posibilidad de consultar valoraciones pasadas y tener una lista de deseos personalizada enriquece la experiencia del usuario y aumenta su satisfacción con la aplicación.
+
+#### Descubrimiento de Nuevos Vinos
+
+Gracias al sistema de recomendaciones, los usuarios pueden descubrir vinos que de otro modo podrían haber pasado desapercibidos, ampliando sus horizontes y conocimientos sobre vinos.
+
+### Conclusiones Generales
+
+### Atractivo para Aficionados y Conocedores
+
+La Wine App es atractiva tanto para aficionados como para conocedores del vino, gracias a su amplio catálogo, funcionalidades personalizadas y comunidad de usuarios activos que aportan valoraciones y comentarios.
+
+#### Potencial de Crecimiento y Retención de Usuarios
+
+Las características personalizadas, como las listas de deseos y las recomendaciones basadas en valoraciones, son factores clave que pueden aumentar la retención de usuarios y fomentar el crecimiento de la base de usuarios.
+
+#### Integración Completa del Proceso de Compra
+
+Al facilitar la compra directa desde la aplicación, se cierra el ciclo de descubrimiento, valoración y adquisición de vinos, mejorando la experiencia de usuario y potencialmente aumentando las ventas de vinos a través de la plataforma.
+
+En resumen, Wine App parece ser una herramienta completa y bien diseñada para los amantes del vino, ofreciendo una experiencia personalizada y conveniente que abarca desde la exploración hasta la compra de vinos.
 
 ## Bibliografia
 
@@ -575,16 +690,29 @@ Esta colección también se utilizará para el sistema de recomendaciones. Estos
 - [Card Carousel](https://medium.com/flutter-community/how-to-create-card-carousel-in-flutter-979bc8ecf19)
 - [Cards](https://andygeek.com/posts/Creando-cards-en-flutter/)
 
+- [AppBar](https://www.youtube.com/watch?v=TlbbIQykHK0)
+
 ### Django
 
 - [Django Seccion de Likes y Comentarios](https://www.youtube.com/watch?v=G8FWGtGk5ig)
 - [Django + Mongo con djongo](https://jacobsood.medium.com/integrating-mongodb-atlas-with-django-using-djongo-962dfd1513eb)
 - [Django + Mongo con pymongo](https://www.digitalocean.com/community/tutorials/how-to-connect-a-django-app-to-mongodb-with-pymongo)
 
-### Sistema de recomendaciones
+### Sistema recomendación
 
 - [Deep learnig with python - François Chollet](https://www.google.com/search?q=fran%C3%A7ois+chollet+deep+learning+with+python&sca_esv=0fe395fae313f6fd&sca_upv=1&rlz=1C1GCEA_enES1111ES1111&sxsrf=ADLYWIJo1kffYn5_BLNIi34Qfbw4w_YYnQ%3A1717709397768&ei=VSpiZunELoKK9u8Pz5TXqAw&ved=0ahUKEwipw-yT9seGAxUChf0HHU_KFcUQ4dUDCBA&uact=5&oq=fran%C3%A7ois+chollet+deep+learning+with+python&gs_lp=Egxnd3Mtd2l6LXNlcnAiK2ZyYW7Dp29pcyBjaG9sbGV0IGRlZXAgbGVhcm5pbmcgd2l0aCBweXRob24yBxAuGIAEGBMyBxAAGIAEGBMyCBAAGBMYFhgeMggQABgTGBYYHjIIEAAYExgWGB4yCBAAGBMYFhgeMggQABgTGBYYHjIIEAAYExgWGB4yCBAAGBMYFhgeMggQABgTGBYYHjIWEC4YgAQYExiXBRjcBBjeBBjgBNgBAUjxAVAAWABwAHgAkAEAmAF-oAF-qgEDMC4xuAEDyAEA-AEBmAIBoAKDAZgDALoGBggBEAEYFJIHAzAuMaAHpww&sclient=gws-wiz-serp)
+
+- [Introducción motores recomendación](https://www.datahack.es/motores-de-recomendacion-con-python-parte-1/)
+
+- [Despliegue servicio macheni learning](https://genscinet.com/despliegue-servicio-machine-learning-flask-django/)
 
 ### Repository
 
 - [web Scrapping](https://realpython.com/beautiful-soup-web-scraper-python/)
+
+### Assets
+
+- [IA para generar icono app](https://app.recraft.ai/community)
+
+- [Obtener formato de iconos para plataformas](https://makeappicon.com/)
+
