@@ -32,6 +32,8 @@ Por último, para que la garantizar el buen uso de los datos sensibles de la apl
 
 - [Futuras mejoras](#futuras-mejoras)
 
+- [Conclusiones](#conclusiones)
+
 - [Bibliografia](#bibliografia)
 
 ## Estado del arte/Marco Teórico
