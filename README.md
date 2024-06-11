@@ -6,7 +6,7 @@ wine App es una aplicación móvil que pretende ayudar a sus usuarios a la elecc
 
 Para conseguir dicho propósito, la aplicación cuenta con un sistema de recomendaciones que ayudará al algoritmo a elegir otros vinos con características similares. También, cuenta con un sistema de seguimiento de otras personas, que permite conocer las valoraciones de nuestros contactos y establecer un sistema de recomendaciones según la selección del grupo de contacto que se realice.
 
-El sistema cuenta con una variedad de más de 3000 modelos de vinos con sus descripciones, zonas, premios y datos técnicos. La aplicación accede a los datos de la base de datos mediante la API creada en este proyecto.
+El sistema cuenta con una variedad de más de 1700 modelos de vinos con sus descripciones, zonas, premios y datos técnicos. La aplicación accede a los datos de la base de datos mediante la API creada en este proyecto.
 
 Los datos de la base de datos han sido extraídos de forma automatizada (webscrapping) de páginas especializadas en el sector vinícola, una vez extraído los datos, se actualizan con la base de datos.
 
