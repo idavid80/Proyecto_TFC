@@ -297,7 +297,7 @@ Seguir la documentación oficial de [Django](https://docs.djangoproject.com/en/5
 
 ### Estructura de Django
 
-```plaintext
+~~~plaintext
 
 api_vino/
 
@@ -347,15 +347,13 @@ api_vino/
 
 └── requirements.txt
 
-```
+~~~
 
 **manage.py**: Un script que facilita la administración del proyecto Django. Permite ejecutar comandos como runserver, makemigrations, migrate, startapp, etc.
 
 **settings.py**: Archivo de configuración principal del proyecto. Aquí se configuran las aplicaciones instaladas, la base de datos, las configuraciones de middleware, y otros ajustes del proyecto.
 
-```py
-
-
+~~~py
 
 INSTALLED_APPS = [
 
@@ -389,8 +387,6 @@ REST_FRAMEWORK = {
 
 }
 
-
-
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
@@ -399,14 +395,9 @@ CORS_ORIGIN_WHITELIST = (
 
 )
 
-
-
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-
-
 MONGO_DB="http://127.0.0.1:2017"
-
 
 
 """
@@ -431,15 +422,16 @@ DATABASES = {
 
 }
 
-
-
 """
 
-```
+~~~
+>[!WARNING]
+>
+> Es importante tener las direcciones IP ocultas
 
 **urls.py**: El archivo de enrutamiento principal del proyecto. Define las URL del proyecto y las vincula con las vistas correspondientes. Es necesario, conectar desde el archivo url.py del proyecto api_vino con el archivo url.py del directorio api que se genera al introducir el siguiente comando (python manage.py startapp api)
 
-```python
+~~~python
 
 from django.contrib import admin
 
@@ -461,7 +453,7 @@ urlpatterns = [
 
 ]
 
-```
+~~~
 
 ### Creacion de la api y sus librerías
 
@@ -527,7 +519,8 @@ Para implementar el docker en la parte backend así como del uso del SDK en la a
 
 - [Google Sign](https://www.ory.sh/docs/kratos/social-signin/google#flutter-code-example)
 
-> [!NOTE]
+>[!NOTE]
+>
 > Para realizar el trabajo se ha utilizado prácticamente toda la documentación de ory, **ory keto** está configurado en el proyecto, aunque no está implementado en esta versión
 
 La implementación de ory se ha realizado a través de un contenedor Dockers, el cual se ha configurado para disponer del uso de Ory Kratos, Oauth y Keto. Ory kratos y Oauth nos va a permitir la autentificación del usuario, así como de la gestión de los tokens, cookies, gestión de usuarios contraseñas.
