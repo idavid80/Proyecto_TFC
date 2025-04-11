@@ -2,7 +2,7 @@
 
 ## Descripción
 
-wine App es una aplicación móvil que pretende ayudar a sus usuarios a la elección a la hora de elegir una botella de vino, teniendo en cuenta los gustos tanto del usuario en particular como la red de personas que tenga creada. Ayudando así en la elección del vino en función de su o sus necesidades.
+wine App es una aplicación móvil que pretende ayudar a sus usuarios a la elección a la hora de elegir una botella de vino, teniendo en cuenta los gustos tanto del usuario en particular como la red de personas que tenga creada. Ayudando así en la elección del vino en función de sus gustos.
 
 Para conseguir dicho propósito, la aplicación cuenta con un sistema de recomendaciones que ayudará al algoritmo a elegir otros vinos con características similares. También, cuenta con un sistema de seguimiento de otras personas, que permite conocer las valoraciones de nuestros contactos y establecer un sistema de recomendaciones según la selección del grupo de contacto que se realice.
 
